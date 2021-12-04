@@ -23,7 +23,6 @@ actions = {
             commit('UPDATE_CONTESTANTS', response.data.message);
         })
         .catch((error) => {
-            console.log(`contestants error: ${error.message}`)
             commit('SET_NOTIFICATION', error.response.data);
             return Promise.reject();
         })

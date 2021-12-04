@@ -38,8 +38,7 @@ actions = {
       commit('UPDATE_USER', response.data);
       commit('LOADING_SUCCESS');
     })
-    .catch(error => {
-      console.log(error.response.data.message);
+    .catch(() => {
       commit('LOADING_SUCCESS');
     })
   },

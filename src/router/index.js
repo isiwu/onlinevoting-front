@@ -39,10 +39,6 @@ routes = [
       email = to.query.email,
       path = to.query.path;
       
-      console.log(to.path);
-      console.log(path);
-      console.log(email)
-
       if (message) {
         if (success === 'false') success = false;
         else if (success === 'true') success = true;
@@ -190,7 +186,6 @@ routes = [
         })
         .then(response => {
           if (response.data.message) {
-            console.log(response.data)
             store.dispatch('setAccountNotification', response.data);
             sessionStorage.setItem('normalUrl', 'yes');
             return next(to.path); 

@@ -233,7 +233,6 @@ actions = {
         commit("SET_NOTIFICATION", payload);
     },
     setVoteStatusNotification({commit}, payload) {
-        console.log('called by router')
         commit("SET_NOTIFICATION", payload);
     },
     setLoginNotification({commit}, payload) {

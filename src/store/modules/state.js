@@ -34,7 +34,6 @@ actions = {
       commit('UPDATE_STATESUNDERCONTESTANTS', response.data.message);
     })
     .catch(error => {
-      console.log(error)
       commit('SET_NOTIFICATION', error.response.data);
 
       return Promise.reject();

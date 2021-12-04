@@ -78,12 +78,10 @@ export default {
         })
       },
       validateInput() {
-        console.log('validate')
         let validate = true;
 
         for (const field in this.fields) {
           if (Object.hasOwnProperty.call(this.fields, field) && !this.fields[field]) {
-            console.log('!')
             this.fieldsEmpty[field] = true;
             validate = false;
           }
