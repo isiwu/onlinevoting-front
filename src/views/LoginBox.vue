@@ -1,7 +1,7 @@
 <template>
 <div v-if="notificationSuccess" class="has-background-success has-text-white">{{ notificationMessage }}</div>
 <div v-else-if="!notificationSuccess" class="has-background-danger has-text-white">{{ notificationMessage }}</div>
-<div id="login-form" class="box">
+<div id="login-form" class="box mt-5">
   <h2 class="login-details">login</h2>
   <form action="" @submit.prevent="login" @input.capture="clearErrorMessage">
     <div class="field">
