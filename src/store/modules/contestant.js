@@ -17,7 +17,7 @@ mutations = {
 actions = {
     getContestants({commit}) {
         return axios.get('/api/contestants', {
-            baseURL: process.env.NODE_ENV === 'production'?'https://onlinevoting.herokuapp.com/':'/',
+            baseURL: 'https://onlinevoting.herokuapp.com/',
         })
         .then(response => {
             commit('UPDATE_CONTESTANTS', response.data.message);
@@ -31,7 +31,7 @@ actions = {
         commit('LOADING_PENDING'); //loading pending
 
         return axios.post('/api/contestants/register', payload, {
-            baseURL: process.env.NODE_ENV === 'production'?'https://onlinevoting.herokuapp.com/':'/',
+            baseURL: 'https://onlinevoting.herokuapp.com/',
         })
         .then(response => {
             commit('SET_NOTIFICATION', response.data);

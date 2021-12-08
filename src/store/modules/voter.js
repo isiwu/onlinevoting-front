@@ -47,7 +47,7 @@ actions = {
       commit('LOADING_PENDING');
 
       return axios.post('/api/users/create', payload, {
-        baseURL: process.env.NODE_ENV === 'production'?'https://onlinevoting.herokuapp.com/':'/',
+        baseURL: 'https://onlinevoting.herokuapp.com/'
       })
       .then(response => {
         commit("SET_NOTIFICATION", response.data)
@@ -63,7 +63,7 @@ actions = {
         commit('LOADING_PENDING'); //login pending
 
         return axios.post('/api/users/login', payload, {
-            baseURL: process.env.NODE_ENV === 'production'?'https://onlinevoting.herokuapp.com/':'/',
+            baseURL: 'https://onlinevoting.herokuapp.com/'
         })
         .then((response) => {
             const [user,votingAccount={}] = response.data.message;
@@ -107,7 +107,7 @@ actions = {
     },
     logout({commit}) {
         return axios.get('/api/users/logout', {
-            baseURL: process.env.NODE_ENV === 'production'?'https://onlinevoting.herokuapp.com/':'/',
+            baseURL: 'https://onlinevoting.herokuapp.com/'
         })
         .then(() => {
             for (const key in sessionStorage) {
@@ -122,7 +122,7 @@ actions = {
         commit('LOADING_PENDING'); //loading pending
 
         return axios.post('/api/voters/create', payload, {
-            baseURL: process.env.NODE_ENV === 'production'?'https://onlinevoting.herokuapp.com/':'/',
+            baseURL: 'https://onlinevoting.herokuapp.com/'
         })
         .then((response) => {
             commit("SET_NOTIFICATION", response.data);
@@ -140,7 +140,7 @@ actions = {
         commit('LOADING_PENDING'); //loading pending
 
         return axios.post('/api/users/create', payload, {
-            baseURL: process.env.NODE_ENV === 'production'?'https://onlinevoting.herokuapp.com/':'/',
+            baseURL: 'https://onlinevoting.herokuapp.com/'
         })
         .then(response => {
             commit("SET_NOTIFICATION", response.data);
@@ -194,7 +194,7 @@ actions = {
         }
 
         return axios.put('/api/voters/vote', {votes: filteredVotes, voter}, {
-            baseURL: process.env.NODE_ENV === 'production'?'https://onlinevoting.herokuapp.com/':'/',
+            baseURL: 'https://onlinevoting.herokuapp.com/'
         })
         .then((response) => {
             const [contestants, voter, message] = response.data.message;
@@ -220,7 +220,7 @@ actions = {
     },
     getVoterVotes({commit}, payload) {
         return axios.get(`/api/voters/${payload}`, {
-            baseURL: process.env.NODE_ENV === 'production'?'https://onlinevoting.herokuapp.com/':'/',
+            baseURL: 'https://onlinevoting.herokuapp.com/'
         })
         .then(response => {
             commit('UPDATE_VOTES', response.data.message)
@@ -241,7 +241,7 @@ actions = {
     unlockAccount({commit}, payload) {
         commit('LOADING_PENDING');
         return axios.post('/api/users/unlock-account', payload, {
-            baseURL: process.env.NODE_ENV === 'production'?'https://onlinevoting.herokuapp.com/':'/',
+            baseURL: 'https://onlinevoting.herokuapp.com/'
         })
         .then(response => {
             commit("SET_NOTIFICATION", response.data);
@@ -256,7 +256,7 @@ actions = {
     forgetPassword({commit}, payload) {
         commit('LOADING_PENDING');
         return axios.post('/api/users/forget-password', payload, {
-            baseURL: process.env.NODE_ENV === 'production'?'https://onlinevoting.herokuapp.com/':'/',
+            baseURL: 'https://onlinevoting.herokuapp.com/'
         })
         .then((response) => {
             commit("SET_NOTIFICATION", response.data);
@@ -271,7 +271,7 @@ actions = {
     resetPassword({commit}, payload) {
         commit('LOADING_PENDING');
         return axios.post('/api/users/reset-password', payload, {
-            baseURL: process.env.NODE_ENV === 'production'?'https://onlinevoting.herokuapp.com/':'/',
+            baseURL: 'https://onlinevoting.herokuapp.com/'
         })
         .then(response => {
             commit("SET_NOTIFICATION", response.data);
@@ -286,7 +286,7 @@ actions = {
     changePassword({commit}, payload) {
         commit('LOADING_PENDING');
         return axios.post('/api/users/change-password', payload, {
-            baseURL: process.env.NODE_ENV === 'production'?'https://onlinevoting.herokuapp.com/':'/',
+            baseURL: 'https://onlinevoting.herokuapp.com/'
         })
         .then(response => {
             commit("SET_NOTIFICATION", response.data);

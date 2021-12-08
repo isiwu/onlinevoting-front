@@ -14,7 +14,7 @@ mutations = {
 actions = {
   getParties({commit}) {
     return axios.get('/api/parties', {
-      baseURL: process.env.NODE_ENV === 'production'?'https://onlinevoting.herokuapp.com/':'/',
+      baseURL: 'https://onlinevoting.herokuapp.com/',
     })
     .then(response => {
       commit('UPDATE_PARTIES', response.data.message);

@@ -68,7 +68,7 @@ export default {
     }
 
     //set up client socket io 
-    const socketUrl = process.env.NODE_ENV === 'production'?'onlinevoting.herokuapp.com':'ws://localhost:3000',
+    const socketUrl = 'onlinevoting.herokuapp.com',
     socket = io(socketUrl);
 
     socket.on('new vote', (data) => {

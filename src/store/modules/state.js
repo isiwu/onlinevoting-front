@@ -21,13 +21,13 @@ mutations = {
 actions = {
   getStates({commit}) {
     return axios.get('/api/states', {
-      baseURL: process.env.NODE_ENV === 'production'?'https://onlinevoting.herokuapp.com/':'/',
+      baseURL: 'https://onlinevoting.herokuapp.com/'
     })
     .then(response => {
       commit('UPDATE_STATES', response.data.message);
 
       return axios.get('/api/states/under-contestants', {
-        baseURL: process.env.NODE_ENV === 'production'?'https://onlinevoting.herokuapp.com/':'/',
+        baseURL: 'https://onlinevoting.herokuapp.com/'
       })
     })
     .then(response => {

@@ -17,7 +17,7 @@ actions = {
     commit('LOADING_PENDING');
 
     return axios.post('/api/users/create', payload, {
-      baseURL: process.env.NODE_ENV === 'production'?'https://onlinevoting.herokuapp.com/':'/'
+      baseURL: 'https://onlinevoting.herokuapp.com/'
     })
     .then(response => {
       commit('CREATE_ACCOUNT_NOTIFICATION', response.data);
@@ -32,7 +32,7 @@ actions = {
     commit('LOADING_PENDING');
 
     return axios.get(`/api/users/${payload}`, {
-      baseURL: process.env.NODE_ENV === 'production'?'https://onlinevoting.herokuapp.com/':'/'
+      baseURL: 'https://onlinevoting.herokuapp.com/'
     })
     .then(response => {
       commit('UPDATE_USER', response.data);

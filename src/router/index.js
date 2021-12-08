@@ -181,7 +181,7 @@ routes = [
       if (email) {
         axios.get('/api/users/validate', {
           params: {email}, 
-          baseURL: process.env.NODE_ENV === 'production'?'https://onlinevoting.herokuapp.com/':'/',
+          baseURL: 'https://onlinevoting.herokuapp.com/',
           withCredentials: true,
         })
         .then(response => {
